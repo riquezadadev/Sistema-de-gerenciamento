@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Loja {
     static Scanner ler = new Scanner(System.in);
     public static void main(String[] args) {
-        //Oq vai ter nesta bonba
+        //Oq vai ter nesta bomba
         // Cadastro e alteração de produtos.
         //Listagem e busca.
         //Controle de entradas e saídas.
@@ -20,10 +20,35 @@ public class Loja {
 
         int quantidade = 0;
         System.out.println("==================\n   CLUTCH STORE  \n================== ");
-        System.out.print("seja bem-vindo!\n");
+        System.out.print("Seja Bem-Vindo!\n");
         System.out.println("\noque deseja fazer?");
         String nome;
         String opcao;
+
+        // Capacidade máxima do sistema (1 a 1000)
+        final int MAX = 1000;
+        int totalCadastrados = 0;
+
+        // Opções padrão da loja (4 modelos, 3 cores, tamanhos 36 a 42)
+        String[] modelosPadrao = {"Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4"};
+        String[] coresPadrao = {"Preto", "Branco", "Branco com Preto"};
+        int[] tamanhosPadrao = {36, 37, 38, 39, 40, 41, 42, 43};
+
+        // Vetores principais dos produtos em estoque
+        int[] codigos = new int[MAX];
+        String[] modelos = new String[MAX];
+        String[] cores = new String[MAX];
+        int[] tamanhos = new int[MAX];
+        int[] estoque = new int[MAX];
+        double[] precos = new double[MAX];
+
+        // Controle de vendas, caixa e histórico de movimentações
+        double caixaTotal = 0.0;
+        double totalImpostos = 0.0;
+        int totalVendas = 0;
+        String[] historico = new String[MAX];
+        int totalMovimentacoes = 0;
+
         do{
             System.out.println("\n--Escolha uma opção abaixo--\n");
             System.out.print(
